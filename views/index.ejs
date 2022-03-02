@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pastebin</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1 class="title" id="title">Pastebin</h1>
+    <div class="flex-parent-element">
+      <div class="flex-parent-element-form">
+        <form action="/" method="post">
+          <div>
+              <label for="paste_title">Paste Name / Title (required):</label>
+              <input type="text" name="name" class="form-control" id="paste_title" required="required" placeholder="'?' and '#' characters are not accepted!">
+          </div>
+          <br>
+          <div>
+            <label for="paste_text">Paste your text below (required):</label>
+            <textarea type="text" name="text" class="form-control" id="paste_text" rows="10" required="required"></textarea>
+            <br>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">Paste</button>
+          </div>
+        </form>
+      </div>
+      <div class="flex-parent-element-pastesList">
+        <h4>Check the latest pastes added!</h4>
+        <ul><% if (name.length > 0) { %>
+              <% for(eachName of name.reverse()) { %>
+                <li>
+                <a href='/<%= eachName.id %>'><%= eachName.name %></a>
+                </li>
+              <% } %> 
+          <% }%></ul>
+      </div>
+    </div>
+  </body>
+</html>

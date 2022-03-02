@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pastes</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header text-white bg-success mb-3">
+          <b class="pasteTitle"><%= name %></b>
+      </div>
+      <div class="card-body bg-light">
+          <pre class="pasteText"><%= text %></pre>
+          <a href="/" class="btn btn-primary">Go back!</a>
+          <form action="/<%= id %>/<%= name %>" method="GET">
+              <button type="submit" class="btn btn-primary">Delete Paste!</a>
+          </form>
+      </div>
+    </div>
+    <div>
+      <h2>Edit your paste as you wish down below!</h2>
+      <form action="/<%= id %>" method="POST">
+        <div>
+            <label for="paste_title">Paste Name / Title (required):</label>
+            <p>'?' and '#' characters are not accepted!</p>
+            <input type="text" name="name" class="form-control" id="paste_title" required="required" placeholder="'?' and '#' characters are not accepted!" value="<%= name %>">
+        </div>
+        <br>
+        <div>
+          <label for="paste_text">Paste your text below:</label>
+          <textarea type="text" name="text" class="form-control" id="paste_text" rows="10"><%= text %></textarea>
+          <br>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Paste</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

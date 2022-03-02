@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:lemonchiffon !important;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.title {
+  text-align: center;
+}
+
+.flex-parent-element {
+  display: flex;
+}
+
+.flex-parent-element-form {
+  flex: 1;
+  width: 70%;
+  margin-right: 50px;
+}
+
+.flex-parent-element-pastesList {
+  margin-top: 5px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-decoration: underline;
+  max-width: max-content;
+  display: flex;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+p {
+  color: crimson;
+}
