@@ -12,7 +12,7 @@ const getPasteById = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(queries.getPasteById, [id], (error, results) => {
         if (error) throw error;
-        res.status(200).render('eachPaste.ejs', { id: id, name: results.rows[0].name, text: results.rows[0].text });
+        res.status(200).render('viewPaste.ejs', { id: id, name: results.rows[0].name, text: results.rows[0].text });
     });
 };
 
@@ -63,7 +63,7 @@ const updatePaste = (req, res) => {
 
         pool.query(queries.updatePaste, [name, text, id], (error, results) => {
             if (error) throw error;
-            res.status(200).render('eachPaste.ejs', { id: id, name: name, text: text });
+            res.status(200).render('viewPaste.ejs', { id: id, name: name, text: text });
         });
     });
 };
